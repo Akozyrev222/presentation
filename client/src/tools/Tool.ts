@@ -1,7 +1,8 @@
 export default class Tool {
-    protected canvas: any;
-    protected ctx: any;
+    protected canvas: HTMLCanvasElement;
+    protected ctx: CanvasRenderingContext2D;
     constructor(canvas) {
+        console.log(canvas)
         this.canvas = canvas
         this.ctx = canvas.getContext('2d')
     }

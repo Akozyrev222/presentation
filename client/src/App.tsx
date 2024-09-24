@@ -1,14 +1,14 @@
-import React, {DetailedReactHTMLElement, FunctionComponentElement, InputHTMLAttributes} from 'react';
-import {EditOutlined, LaptopOutlined, NotificationOutlined, UserOutlined} from '@ant-design/icons';
+import React from 'react';
+import {LaptopOutlined, NotificationOutlined, UserOutlined} from '@ant-design/icons';
 import type {MenuProps} from 'antd';
-import {Breadcrumb, Layout, Menu, theme} from 'antd';
+import {Layout, Menu, theme} from 'antd';
 import Canvas from "./components/Canvas/Canvas.tsx";
 import Toolbar from "./components/Toolbar/Toolbar.tsx";
 
-const {Header, Content, Sider} = Layout;
+const {Sider} = Layout;
 
 
-const items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
+/*const items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
     (icon, index) => {
         const key = String(index + 1);
 
@@ -26,11 +26,11 @@ const items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOu
             }),
         };
     },
-);
+);*/
 
 const App: React.FC = () => {
     const {
-        token: {colorBgContainer, borderRadiusLG},
+        token: {colorBgContainer},
     } = theme.useToken();
     console.log(colorBgContainer)
     return (
@@ -43,7 +43,6 @@ const App: React.FC = () => {
                         defaultSelectedKeys={['1']}
                         defaultOpenKeys={['sub1']}
                         style={{height: '100%', borderRight: 0}}
-                        items={items2}
                     />
                 </Sider>
                 <Layout style={{padding: '0 24px 24px'}}>

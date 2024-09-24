@@ -1,12 +1,12 @@
 import styles from './Canvas.module.scss';
 import {observer} from "mobx-react-lite";
-import {useEffect, useRef} from "react";
+import {LegacyRef, RefObject, useEffect, useRef} from "react";
 import canvasState from "../../store/canvasState.ts";
 import toolState from "../../store/toolState.ts";
 import Brush from "../../tools/Brush.ts";
 
 const Canvas = observer(() => {
-        const canvasRef = useRef()
+        const canvasRef: RefObject<HTMLCanvasElement> = useRef(canvasState.canvas)
         useEffect(() => {
             canvasState.setCanvas(canvasRef.current)
             toolState.setTool(new Brush(canvasRef.current))

@@ -1,4 +1,3 @@
-import {Button, Menu} from "antd";
 import React, {useState} from "react";
 import {Header} from "antd/es/layout/layout";
 import {Radio} from 'antd';
@@ -10,10 +9,11 @@ import {ColorPicker} from 'antd';
 import toolState from "../../store/toolState.ts";
 import Brush from "../../tools/Brush.ts";
 import canvasState from "../../store/canvasState.ts";
+import {AggregationColor} from "antd/es/color-picker/color";
 
 
 const Toolbar = () => {
-    const [color, setColor] = useState()
+    const [color, setColor]: AggregationColor = useState()
     const instruments: { icon: React.JSX.Element; key: string }[] =
         [
             {
