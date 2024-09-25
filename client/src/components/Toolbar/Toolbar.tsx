@@ -1,9 +1,8 @@
-import React, {useState} from "react";
+import {Dispatch, SetStateAction, useState} from "react";
 import {Header} from "antd/es/layout/layout";
 import {Radio} from 'antd';
 import {FaMarker, FaPencilAlt, FaRegCircle} from "react-icons/fa";
 import {FaRegSquareFull} from "react-icons/fa6";
-import {IoMdColorPalette} from "react-icons/io";
 import styles from './Toolbar.module.scss'
 import {ColorPicker} from 'antd';
 import toolState from "../../store/toolState.ts";
@@ -14,38 +13,6 @@ import {AggregationColor} from "antd/es/color-picker/color";
 
 const Toolbar = () => {
     const [color, setColor]: AggregationColor = useState()
-    const instruments: { icon: React.JSX.Element; key: string }[] =
-        [
-            {
-                label: 'Pencil',
-                icon: <FaPencilAlt size={25}/>
-            },
-            {
-                label: 'Square',
-                icon: <FaRegSquareFull size={25}/>
-            },
-            {
-                label: 'Circle',
-                icon: <FaRegCircle size={25}/>
-            },
-            {
-                label: 'Size',
-                icon: <FaMarker size={25}/>
-            },
-            {
-                label: 'Palette',
-                icon: <IoMdColorPalette size={25}/>
-            }
-
-
-        ].map((item, index) => {
-            const key = String(index + 1)
-            return {
-                key,
-                label: item.label,
-                icon: <div className={styles.icon}>{item.icon}</div>,
-            }
-        });
     return (
         <Header style={{
             display: 'flex',
@@ -76,7 +43,7 @@ const Toolbar = () => {
                         value={color}
                         allowClear
                         onChange={(c) => {
-                            setColor(c.toHexString());
+                            setColor(c);
                         }}
                     />
                 </div>

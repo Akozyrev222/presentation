@@ -3,7 +3,7 @@ import Tool from "./Tool.ts";
 export default class Brush extends Tool {
     private mouseDown: boolean;
 
-    constructor(canvas) {
+    constructor(canvas: HTMLCanvasElement | null) {
         super(canvas)
         this.listen()
     }
@@ -14,7 +14,7 @@ export default class Brush extends Tool {
         this.canvas.onmousedown = this.mouseDownHandler.bind(this)
     }
 
-    mouseUpHandler(e) {
+    mouseUpHandler() {
         this.mouseDown = false
 
     }

@@ -1,7 +1,7 @@
 import {makeObservable} from "mobx";
 
 class CanvasState {
-    canvas = null
+    canvas: HTMLCanvasElement | null = null
 
     constructor() {
         makeObservable(this)

@@ -1,6 +1,4 @@
 import React from 'react';
-import {LaptopOutlined, NotificationOutlined, UserOutlined} from '@ant-design/icons';
-import type {MenuProps} from 'antd';
 import {Layout, Menu, theme} from 'antd';
 import Canvas from "./components/Canvas/Canvas.tsx";
 import Toolbar from "./components/Toolbar/Toolbar.tsx";

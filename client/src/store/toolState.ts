@@ -1,4 +1,5 @@
 import {makeObservable} from "mobx";
+import Brush from "../tools/Brush.ts";
 
 class ToolState {
     tool = null
@@ -7,7 +8,8 @@ class ToolState {
         makeObservable(this)
     }
 
-    setTool(tool) {
+    setTool(tool: Brush) {
+        console.log(tool)
         this.tool = tool
     }
 }

@@ -1,6 +1,6 @@
 import styles from './Canvas.module.scss';
 import {observer} from "mobx-react-lite";
-import {LegacyRef, RefObject, useEffect, useRef} from "react";
+import {RefObject, useEffect, useRef} from "react";
 import canvasState from "../../store/canvasState.ts";
 import toolState from "../../store/toolState.ts";
 import Brush from "../../tools/Brush.ts";
